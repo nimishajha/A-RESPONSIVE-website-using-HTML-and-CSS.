@@ -1,0 +1,101 @@
+html,body{
+    height: 100%;
+}
+*{
+    border: border-box;
+    margin:0;
+    padding:0;
+}
+
+.contain{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+    align-items:center;
+    height: 100vh;
+    background-color: rgb(9, 45, 9);
+    overflow: auto;
+}
+.left{
+    color:aliceblue;
+    flex-basis: 500px;
+    font-size: 2rem;
+}
+.right{
+    
+    flex-basis: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 80vh;
+    gap: 1rem;
+}
+.box{
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+    background-position: center;
+    justify-content: center;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 2rem;
+    border: .1rem;
+    
+    transition: all .5s ease-in-out;
+    
+}
+.box:hover{
+    border:.1rem solid white;
+    background-color: rgb(137, 201, 137);
+    background-blend-mode:multiply;
+}
+
+.box img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.col-2{
+    grid-column: span 2;
+}
+.row-2{
+    grid-row: span 2;
+}
+
+@media(max-width:1500px){
+    .contain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:1rem;
+        
+    }
+    .left{
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+        flex-basis: 50px;
+        margin-bottom: 2rem;
+    }
+
+    /*to make images vertical*/
+    .right{
+
+        display:flex;
+        flex-direction: column;
+        min-width: 40rem;
+        min-height: 50rem;
+        margin: .5rem;
+        gap:.5rem;
+        justify-content: space-evenly;
+    }
+    .box{
+        min-height: 300px;
+        
+    }
+    
+}
